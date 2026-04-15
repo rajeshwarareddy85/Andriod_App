@@ -1,0 +1,39 @@
+✅ DB connected: mysql+pymysql://root:@localhost:3306/powerpulse_backend
+WARNING: LSTM artifacts not loaded: Model file not found: energy_lstm_model.keras
+WARNING: SARIMA artifact not loaded: SARIMA model file not found: energy_sarima_model.pkl
+AI Chat request received
+AI User Message: hello, Consumer: CN1001
+Calling OpenAI with model: gpt-3.5-turbo
+OpenAI status: 401
+OpenAI API Error (401): {
+  "error": {
+    "message": "Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************VPAA. You can find your API key at https://platform.openai.com/account/api-keys.",
+    "type": "invalid_request_error",
+    "code": "invalid_api_key",
+    "param": null
+  },
+  "status": 401
+}
+ROUTE HIT: /predict-next-30-from-db
+DEBUG: Processing prediction for CN1005
+DEBUG: 39 usage rows found for CN1005
+ERROR in predict_next_30_from_db: SARIMA model file not found: energy_sarima_model.pkl
+AI Chat request received
+AI User Message: hi, Consumer: CN1005
+Calling OpenAI with model: gpt-3.5-turbo
+OpenAI status: 401
+OpenAI API Error (401): {
+  "error": {
+    "message": "Incorrect API key provided: sk-svcac***********************************************************************************************************************************************************VPAA. You can find your API key at https://platform.openai.com/account/api-keys.",
+    "type": "invalid_request_error",
+    "code": "invalid_api_key",
+    "param": null
+  },
+  "status": 401
+}
+✅ DB connected: mysql+pymysql://root:@localhost:3306/powerpulse_backend
+WARNING: LSTM artifacts not loaded: Model file not found: energy_lstm_model.keras
+WARNING: SARIMA artifact not loaded: SARIMA model file not found: energy_sarima_model.pkl
+✅ DB connected: mysql+pymysql://root:@localhost:3306/powerpulse_backend
+WARNING: LSTM artifacts not loaded: Model file not found: energy_lstm_model.keras
+WARNING: SARIMA artifact not loaded: SARIMA model file not found: energy_sarima_model.pkl
