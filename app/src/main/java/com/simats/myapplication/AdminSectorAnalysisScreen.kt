@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -29,7 +29,7 @@ fun AdminSectorAnalysisScreen(
     onSectorsClick: () -> Unit = {},
     onConsumersClick: () -> Unit = {},
     onReportsClick: () -> Unit = {},
-    viewModel: com.simats.myapplication.viewmodel.AdminSectorAnalysisViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    viewModel: com.simats.PowerPulse.viewmodel.AdminSectorAnalysisViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     modifier: Modifier = Modifier
 ) {
     val darkBgColor = Color(0xFF0C1D20)
@@ -112,15 +112,15 @@ fun AdminSectorAnalysisScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             when (val state = mandalState) {
-                is com.simats.myapplication.viewmodel.MandalAnalysisState.Loading -> {
+                is com.simats.PowerPulse.viewmodel.MandalAnalysisState.Loading -> {
                     Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
                         CircularProgressIndicator(color = cyanColor)
                     }
                 }
-                is com.simats.myapplication.viewmodel.MandalAnalysisState.Error -> {
+                is com.simats.PowerPulse.viewmodel.MandalAnalysisState.Error -> {
                     Text(text = "Error: ${state.message}", color = Color.Red, fontSize = 14.sp)
                 }
-                is com.simats.myapplication.viewmodel.MandalAnalysisState.Success -> {
+                is com.simats.PowerPulse.viewmodel.MandalAnalysisState.Success -> {
                     val data = state.data
                     val filteredMandals = data.mandals.filter { 
                         it.mandalName.contains(searchQuery, ignoreCase = true) 
@@ -270,7 +270,7 @@ fun AdminSectorAnalysisScreen(
 
 @Composable
 fun MandalCard(
-    data: com.simats.myapplication.model.MandalData,
+    data: com.simats.PowerPulse.model.MandalData,
     cyanColor: Color,
     textGray: Color,
     cardBg: Color,

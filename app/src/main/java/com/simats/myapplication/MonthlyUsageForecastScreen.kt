@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.model.*
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.*
+import com.simats.PowerPulse.network.ApiClient
 import com.patrykandpatrick.vico.compose.axis.horizontal.rememberBottomAxis
 import com.patrykandpatrick.vico.compose.axis.vertical.rememberStartAxis
 import com.patrykandpatrick.vico.compose.chart.Chart

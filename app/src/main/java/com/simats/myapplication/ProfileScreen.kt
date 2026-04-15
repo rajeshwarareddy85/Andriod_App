@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -65,7 +65,7 @@ fun ProfileScreen(
     LaunchedEffect(userEmail) {
         if (userEmail.isNotEmpty()) {
             try {
-                val response = com.simats.myapplication.network.ApiClient.api.getUserProfileByEmail(userEmail)
+                val response = com.simats.PowerPulse.network.ApiClient.api.getUserProfileByEmail(userEmail)
                 if (response.isSuccessful && response.body()?.ok == true) {
                     val user = response.body()?.user
                     fullName = user?.fullName ?: "Unknown User"

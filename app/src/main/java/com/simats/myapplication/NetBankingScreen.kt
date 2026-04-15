@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

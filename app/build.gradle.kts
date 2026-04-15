@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.simats.myapplication"
+    namespace = "com.simats.PowerPulse"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.simats.myapplication"
+        applicationId = "com.simats.PowerPulse"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

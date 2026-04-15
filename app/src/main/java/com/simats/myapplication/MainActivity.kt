@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,12 +11,12 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.simats.myapplication.ui.theme.PowerPulseTheme
-import com.simats.myapplication.viewmodel.AIViewModel
-import com.simats.myapplication.viewmodel.RechargeViewModel
-import com.simats.myapplication.viewmodel.AdminConsumerManagementViewModel
-import com.simats.myapplication.viewmodel.AdminConsumerDetailsViewModel
-import com.simats.myapplication.viewmodel.AdminChatViewModel
+import com.simats.PowerPulse.ui.theme.PowerPulseTheme
+import com.simats.PowerPulse.viewmodel.AIViewModel
+import com.simats.PowerPulse.viewmodel.RechargeViewModel
+import com.simats.PowerPulse.viewmodel.AdminConsumerManagementViewModel
+import com.simats.PowerPulse.viewmodel.AdminConsumerDetailsViewModel
+import com.simats.PowerPulse.viewmodel.AdminChatViewModel
 
 enum class Screen {
     Splash,

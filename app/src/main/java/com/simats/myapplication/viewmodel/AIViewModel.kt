@@ -1,13 +1,13 @@
-package com.simats.myapplication.viewmodel
+package com.simats.PowerPulse.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simats.myapplication.model.AppMessage
-import com.simats.myapplication.network.ApiClient
-import com.simats.myapplication.model.AIChatRequest
+import com.simats.PowerPulse.model.AppMessage
+import com.simats.PowerPulse.network.ApiClient
+import com.simats.PowerPulse.model.AIChatRequest
 import kotlinx.coroutines.launch
 
 class AIViewModel : ViewModel() {
@@ -37,7 +37,7 @@ class AIViewModel : ViewModel() {
         
         // Build history for backend before updating local list
         val history = messages.filter { it.text != null }.map {
-            com.simats.myapplication.model.AIChatMessage(
+            com.simats.PowerPulse.model.AIChatMessage(
                 role = if (it.isUser) "user" else "assistant",
                 content = it.text
             )
@@ -50,7 +50,7 @@ class AIViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = ApiClient.api.chatWithAI(
-                    com.simats.myapplication.model.AIChatRequest(
+                    com.simats.PowerPulse.model.AIChatRequest(
                         message = userPrompt, 
                         consumerNo = consumerNo,
                         history = history

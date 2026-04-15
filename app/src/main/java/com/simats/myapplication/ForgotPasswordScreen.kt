@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -29,8 +29,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.model.*
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.*
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.launch
 
 @Composable

@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.simats.myapplication.model
+package com.simats.PowerPulse.model
 
 data class AppMessage(
     val id: String = java.util.UUID.randomUUID().toString(),

@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import com.simats.myapplication.model.AppMessage
-import com.simats.myapplication.viewmodel.AIViewModel
+import com.simats.PowerPulse.model.AppMessage
+import com.simats.PowerPulse.viewmodel.AIViewModel
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun AIAssistantScreen(
     userEmail: String = "",
-    viewModel: com.simats.myapplication.viewmodel.AIViewModel,
+    viewModel: com.simats.PowerPulse.viewmodel.AIViewModel,
     onBackClick: () -> Unit = {},
     onHomeClick: () -> Unit = {},
     onUsageClick: () -> Unit = {},

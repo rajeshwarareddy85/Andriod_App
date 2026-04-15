@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,8 +26,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.model.UpdateUserProfileRequest
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.UpdateUserProfileRequest
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

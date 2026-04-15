@@ -1,10 +1,10 @@
-package com.simats.myapplication.viewmodel
+package com.simats.PowerPulse.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simats.myapplication.model.MandalAnalysisResponse
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.MandalAnalysisResponse
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

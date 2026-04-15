@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -41,8 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.simats.myapplication.viewmodel.AdminDashboardViewModel
-import com.simats.myapplication.viewmodel.AdminOverviewState
+import com.simats.PowerPulse.viewmodel.AdminDashboardViewModel
+import com.simats.PowerPulse.viewmodel.AdminOverviewState
 import java.text.DecimalFormat
 
 @Composable

@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.repository.AuthRepository
+import com.simats.PowerPulse.repository.AuthRepository
 import kotlinx.coroutines.launch
 
 @Composable

@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.app.Activity
 import android.widget.Toast
@@ -23,7 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.simats.myapplication.viewmodel.SubscriptionViewModel
+import com.simats.PowerPulse.viewmodel.SubscriptionViewModel
 import com.android.billingclient.api.BillingClient
 
 @Composable

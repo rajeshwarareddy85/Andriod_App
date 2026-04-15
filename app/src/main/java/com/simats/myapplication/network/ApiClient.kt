@@ -1,4 +1,4 @@
-package com.simats.myapplication.network
+package com.simats.PowerPulse.network
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

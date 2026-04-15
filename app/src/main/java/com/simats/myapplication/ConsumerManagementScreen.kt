@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -30,7 +30,7 @@ fun ConsumerManagementScreen(
     onConsumersClick: () -> Unit = {},
     onReportsClick: () -> Unit = {},
     onDetailClick: (String) -> Unit = {},
-    viewModel: com.simats.myapplication.viewmodel.AdminConsumerManagementViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    viewModel: com.simats.PowerPulse.viewmodel.AdminConsumerManagementViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
     modifier: Modifier = Modifier
 ) {
     val darkBgColor = Color(0xFF0C1D20)
@@ -122,17 +122,17 @@ fun ConsumerManagementScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             when (val state = consumerState) {
-                is com.simats.myapplication.viewmodel.ConsumerManagementState.Loading -> {
+                is com.simats.PowerPulse.viewmodel.ConsumerManagementState.Loading -> {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         CircularProgressIndicator(color = cyanColor)
                     }
                 }
-                is com.simats.myapplication.viewmodel.ConsumerManagementState.Error -> {
+                is com.simats.PowerPulse.viewmodel.ConsumerManagementState.Error -> {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                         Text(text = "Error: ${state.message}", color = Color.Red, fontSize = 14.sp)
                     }
                 }
-                is com.simats.myapplication.viewmodel.ConsumerManagementState.Success -> {
+                is com.simats.PowerPulse.viewmodel.ConsumerManagementState.Success -> {
                     val filteredConsumers = state.data.consumers.filter { consumer ->
                         val matchesSearch = consumer.consumerNo.contains(searchQuery, ignoreCase = true) || 
                                            consumer.fullName.contains(searchQuery, ignoreCase = true) ||
@@ -221,7 +221,7 @@ fun FilterPill(
 
 @Composable
 fun ConsumerCard(
-    info: com.simats.myapplication.model.ConsumerData,
+    info: com.simats.PowerPulse.model.ConsumerData,
     cyanColor: Color,
     textGray: Color,
     cardBg: Color,

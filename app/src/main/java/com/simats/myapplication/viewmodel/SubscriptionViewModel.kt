@@ -1,4 +1,4 @@
-package com.simats.myapplication.viewmodel
+package com.simats.PowerPulse.viewmodel
 
 import android.app.Activity
 import android.app.Application

@@ -1,7 +1,7 @@
-package com.simats.myapplication.repository
+package com.simats.PowerPulse.repository
 
-import com.simats.myapplication.model.*
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.*
+import com.simats.PowerPulse.network.ApiClient
 
 class AuthRepository {
 

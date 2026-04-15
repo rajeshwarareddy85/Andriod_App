@@ -1,4 +1,4 @@
-package com.simats.myapplication.model
+package com.simats.PowerPulse.model
 
 import com.google.gson.annotations.SerializedName
 

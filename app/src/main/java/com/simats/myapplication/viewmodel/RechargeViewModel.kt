@@ -1,10 +1,10 @@
-package com.simats.myapplication.viewmodel
+package com.simats.PowerPulse.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simats.myapplication.model.RechargePlan
-import com.simats.myapplication.model.UsagePredictPlan
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.RechargePlan
+import com.simats.PowerPulse.model.UsagePredictPlan
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

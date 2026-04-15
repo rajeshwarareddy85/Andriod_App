@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas

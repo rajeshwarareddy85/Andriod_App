@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import android.widget.Toast
 import androidx.compose.foundation.Canvas
@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.viewmodel.AdminConsumerDetailsViewModel
-import com.simats.myapplication.model.DailyUsagePoint
+import com.simats.PowerPulse.viewmodel.AdminConsumerDetailsViewModel
+import com.simats.PowerPulse.model.DailyUsagePoint
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

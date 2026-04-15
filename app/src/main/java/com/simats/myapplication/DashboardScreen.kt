@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -76,25 +76,25 @@ fun DashboardScreen(
     var forecastVal by androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf("--") }
     var unitCost by androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf("--") }
     var isLoading by androidx.compose.runtime.saveable.rememberSaveable { androidx.compose.runtime.mutableStateOf(true) }
-    var weeklyTrend by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(emptyList<com.simats.myapplication.model.DailyTrendItem>()) }
+    var weeklyTrend by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(emptyList<com.simats.PowerPulse.model.DailyTrendItem>()) }
 
     var showAiPopup by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
-    var activePlan by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf<com.simats.myapplication.model.ActivePlanDetails?>(null) }
-    var alerts by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(emptyList<com.simats.myapplication.model.AlertItem>()) }
+    var activePlan by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf<com.simats.PowerPulse.model.ActivePlanDetails?>(null) }
+    var alerts by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(emptyList<com.simats.PowerPulse.model.AlertItem>()) }
     var hasUnreadMessages by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     androidx.compose.runtime.LaunchedEffect(userEmail) {
         if (userEmail.isNotBlank()) {
             isLoading = true
             try {
-                val profileRes = com.simats.myapplication.network.ApiClient.api.getUserProfileByEmail(userEmail)
+                val profileRes = com.simats.PowerPulse.network.ApiClient.api.getUserProfileByEmail(userEmail)
                 if (profileRes.isSuccessful && profileRes.body()?.ok == true) {
                     val cNo = profileRes.body()?.user?.consumerNo ?: ""
                     consumerNo = cNo
                     
                     if (cNo.isNotBlank()) {
                         // 1. Fetch dashboard summary
-                        val summaryRes = com.simats.myapplication.network.ApiClient.api.getDashboardSummary(cNo)
+                        val summaryRes = com.simats.PowerPulse.network.ApiClient.api.getDashboardSummary(cNo)
                         if (summaryRes.isSuccessful && summaryRes.body()?.ok == true) {
                             val data = summaryRes.body()!!
                             val mTotal = data.thisMonthTotalKwh
@@ -105,7 +105,7 @@ fun DashboardScreen(
                         }
                         
                         // 2. Fetch forecast
-                        val forecastRes = com.simats.myapplication.network.ApiClient.api.predictNext30FromDb(cNo)
+                        val forecastRes = com.simats.PowerPulse.network.ApiClient.api.predictNext30FromDb(cNo)
                         if (forecastRes.isSuccessful && forecastRes.body()?.ok == true) {
                             val predVal = forecastRes.body()?.predictionSummary?.nextMonthUsageKwh
                             if (predVal != null) {
@@ -117,32 +117,32 @@ fun DashboardScreen(
                         }
                         
                         // 3. Fetch weekly trend
-                        val weeklyRes = com.simats.myapplication.network.ApiClient.api.getWeeklyTrend(cNo)
+                        val weeklyRes = com.simats.PowerPulse.network.ApiClient.api.getWeeklyTrend(cNo)
                         if (weeklyRes.isSuccessful && weeklyRes.body()?.ok == true) {
                             weeklyTrend = weeklyRes.body()?.weeklyUsage ?: emptyList()
                         }
 
                         // 4. Fetch Unit Cost
-                        val costRes = com.simats.myapplication.network.ApiClient.api.getUnitCost()
+                        val costRes = com.simats.PowerPulse.network.ApiClient.api.getUnitCost()
                         if (costRes.isSuccessful && costRes.body()?.ok == true) {
                             val cost = costRes.body()?.oneUnitCost
                             unitCost = if (cost != null) String.format(java.util.Locale.US, "%.0f", cost) else "10"
                         }
 
                         // 5. Fetch Active Plan
-                        val planRes = com.simats.myapplication.network.ApiClient.api.getActivePlanSummary(cNo)
+                        val planRes = com.simats.PowerPulse.network.ApiClient.api.getActivePlanSummary(cNo)
                         if (planRes.isSuccessful && planRes.body()?.ok == true) {
                             activePlan = planRes.body()?.plan
                         }
 
                         // 6. Fetch Alerts
-                        val alertRes = com.simats.myapplication.network.ApiClient.api.getAlerts(cNo)
+                        val alertRes = com.simats.PowerPulse.network.ApiClient.api.getAlerts(cNo)
                         if (alertRes.isSuccessful && alertRes.body()?.ok == true) {
                             alerts = alertRes.body()?.alerts ?: emptyList()
                         }
 
                         // 7. Check for unread admin messages
-                        val chatRes = com.simats.myapplication.network.ApiClient.api.getChatHistory(cNo)
+                        val chatRes = com.simats.PowerPulse.network.ApiClient.api.getChatHistory(cNo)
                         if (chatRes.isSuccessful && chatRes.body()?.ok == true) {
                             val history = chatRes.body()?.history ?: emptyList()
                             hasUnreadMessages = history.any { it.senderRole == "ADMIN" && !it.isRead }
@@ -510,7 +510,7 @@ fun DashboardCard(
 }
 
 @Composable
-fun UsageTrendSection(textGray: Color, cyanColor: Color, weeklyTrend: List<com.simats.myapplication.model.DailyTrendItem> = emptyList()) {
+fun UsageTrendSection(textGray: Color, cyanColor: Color, weeklyTrend: List<com.simats.PowerPulse.model.DailyTrendItem> = emptyList()) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -559,7 +559,7 @@ fun UsageTrendSection(textGray: Color, cyanColor: Color, weeklyTrend: List<com.s
                 val maxUsage = if (maxUsageRaw > 0) maxUsageRaw else 1.0
 
                 val chartData = if (weeklyTrend.size == 7) weeklyTrend else List(7) {
-                    com.simats.myapplication.model.DailyTrendItem("", listOf("MON","TUE","WED","THU","FRI","SAT","SUN")[it], 0.0)
+                    com.simats.PowerPulse.model.DailyTrendItem("", listOf("MON","TUE","WED","THU","FRI","SAT","SUN")[it], 0.0)
                 }
 
                 chartData.forEachIndexed { index, item ->
@@ -606,7 +606,7 @@ fun UsageTrendSection(textGray: Color, cyanColor: Color, weeklyTrend: List<com.s
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 val chartData = if (weeklyTrend.size == 7) weeklyTrend else List(7) {
-                    com.simats.myapplication.model.DailyTrendItem("", listOf("MON","TUE","WED","THU","FRI","SAT","SUN")[it], 0.0)
+                    com.simats.PowerPulse.model.DailyTrendItem("", listOf("MON","TUE","WED","THU","FRI","SAT","SUN")[it], 0.0)
                 }
 
                 chartData.forEach { item ->
@@ -631,7 +631,7 @@ fun DashboardScreenPreview() {
 }
 
 @Composable
-fun ActivePlanSection(plan: com.simats.myapplication.model.ActivePlanDetails) {
+fun ActivePlanSection(plan: com.simats.PowerPulse.model.ActivePlanDetails) {
     val cyanColor = Color(0xFF00E5FF)
     val textGray = Color(0xFF8B9D9F)
     
@@ -672,7 +672,7 @@ fun ActivePlanSection(plan: com.simats.myapplication.model.ActivePlanDetails) {
 }
 
 @Composable
-fun AlertsSection(alerts: List<com.simats.myapplication.model.AlertItem>) {
+fun AlertsSection(alerts: List<com.simats.PowerPulse.model.AlertItem>) {
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
         for (alert in alerts.take(2)) {
             Surface(

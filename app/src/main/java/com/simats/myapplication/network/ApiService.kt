@@ -1,6 +1,6 @@
-package com.simats.myapplication.network
+package com.simats.PowerPulse.network
 
-import com.simats.myapplication.model.*
+import com.simats.PowerPulse.model.*
 import retrofit2.Response
 import retrofit2.http.*
 

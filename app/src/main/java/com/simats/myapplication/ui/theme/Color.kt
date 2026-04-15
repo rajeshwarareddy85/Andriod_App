@@ -1,4 +1,4 @@
-package com.simats.myapplication.ui.theme
+package com.simats.PowerPulse.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

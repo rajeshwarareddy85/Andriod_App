@@ -1,11 +1,11 @@
-package com.simats.myapplication.viewmodel
+package com.simats.PowerPulse.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.simats.myapplication.model.AdminSendMessageRequest
-import com.simats.myapplication.model.ChatMessage
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.AdminSendMessageRequest
+import com.simats.PowerPulse.model.ChatMessage
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

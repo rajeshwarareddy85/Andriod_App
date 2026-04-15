@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -17,8 +17,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.simats.myapplication.model.AdminProfileData
-import com.simats.myapplication.network.ApiClient
+import com.simats.PowerPulse.model.AdminProfileData
+import com.simats.PowerPulse.network.ApiClient
 import kotlinx.coroutines.launch
 
 @Composable

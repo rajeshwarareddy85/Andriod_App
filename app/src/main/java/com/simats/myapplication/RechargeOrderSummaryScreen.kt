@@ -1,4 +1,4 @@
-package com.simats.myapplication
+package com.simats.PowerPulse
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -26,7 +26,7 @@ import android.content.Intent
 import android.net.Uri
 import android.widget.Toast
 import androidx.compose.ui.platform.LocalContext
-import com.simats.myapplication.viewmodel.RechargeViewModel
+import com.simats.PowerPulse.viewmodel.RechargeViewModel
 import java.util.*
 
 @Composable
